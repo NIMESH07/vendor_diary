@@ -68,8 +68,8 @@ class Vendor_details extends CI_Controller {
         
 
 		$data['site']=$this->OH->getsitedata();
-		$this->load->view('page/header',$data);
-		$this->load->view('vd/Vendor_details',$data);
-		$this->load->view('page/footer',$data);
+		$this->load->view('page/mainheader',$data);
+		$this->load->view('vd/main_vendor_details',$data);
+		$this->load->view('page/mainfooter',$data);
 	}
 }

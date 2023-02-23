@@ -1,15 +1,4 @@
 <?php
-
-// echo ' <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8898782763527089" crossorigin="anonymous"></script>
-// <ins class="adsbygoogle"
-//                      style="display:block"
-//                      data-ad-format="fluid"
-//                      data-ad-layout-key="-6x+cq+4a-w-1w"
-//                      data-ad-client="ca-pub-8898782763527089"
-//                      data-ad-slot="3287615491"></ins>
-//                       <script>
-//                      (adsbygoogle = window.adsbygoogle || []).push({});
-//                 </script>' ;
 if ($vdata == null) {
 ?>
   <div class="vendor-content-wrapper">
@@ -17,11 +6,11 @@ if ($vdata == null) {
       <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <center>
-            No data Found 
+            No data Found
             <br>
             <a class="footer-widget" style="color: red;" href="<?php echo base_url(); ?>">Go to Home</a>
           </center>
-          
+
         </div>
       </div>
     </div>
@@ -50,7 +39,7 @@ if ($vdata == null) {
                     <div class="carousel-item active">
                        <!-- <?=  $vdata[0]->id;?>
                         <?php echo base_url() .IMAGELINK .  $vdata[0]->image;  ?>-->
-                        
+
                       <img class="d-block image" src='<?php echo (file_exists(IMAGELINK .  $vdata[0]->image))? base_url() . IMAGELINK .  $vdata[0]->image :base_url()."assets/images/wedding-planner/defulatimg.jpeg";  ?>' alt="First slide">
                     </div>
                     <div class="carousel-item ">
@@ -75,7 +64,7 @@ if ($vdata == null) {
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-            
+
             <div class="vendor-infobox">
               <div class="vendorheading">
                 <div class="vcontent">
@@ -102,17 +91,17 @@ if ($vdata == null) {
                         {
                             echo 'Send Enquiry';
                         }
-                        
+
                     ?>
-                    
+
                   </a>
-                  <?php 
+                  <?php
                   if($vdata[0]->RegisterBy=="ADMIN")
                   if($vdata[0]->business_claim=="No")
                   {?>
                       <a href="#ClaimBusiness" style="color:<?php echo $site->colour_name;?>" onclick="ClaimPopUp('<?php echo  $vdata[0]->id  ?>','vendor-details','<?php echo $vdata[0]->planner_name ?>');" class="btn-default-wishlist" id="Cliam ">claim this business</a>
                  <?php }?>
-                  
+
                 </div>
               </div>
             </div>
@@ -123,8 +112,8 @@ if ($vdata == null) {
               <div class="card-body">
                 <!--/.vendor-details -->
                 <!--vendor-description -->
-              
-          
+
+
                 <p> <?php echo $vdata[0]->description ?></p>
               </div>
             </div>
@@ -141,7 +130,7 @@ if ($vdata == null) {
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="row">
                   <div class="col-sm-12 col-md-6 nopadding">
                     <h3>Industry Experience</h3>
@@ -156,7 +145,7 @@ if ($vdata == null) {
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="row">
                   <div class="col-sm-12 col-md-6 nopadding">
                     <h3>Start Rate Range</h3>
@@ -171,7 +160,7 @@ if ($vdata == null) {
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="row">
                   <div class="col-sm-12 col-md-6 nopadding">
                     <h3>Capacity</h3>
@@ -201,7 +190,7 @@ if ($vdata == null) {
                   </div>
                 </div>
                 <?php if($vdata[0]->lat!=null && $vdata[0]->long!=null || $vdata[0]->map_location)
-                
+
                 {?>
                     <div class="row">
                       <div class="col-sm-12 nopadding">
@@ -241,10 +230,10 @@ if ($vdata == null) {
                       </div>
                     </div>
                 <?php }?>
-                
+
               </div>
             </div>
-           
+
             <!--Vendor social media-->
             <?php if($vdata[0]->plan_status=="Paid")
             {
@@ -256,11 +245,11 @@ if ($vdata == null) {
                 <!--vendor-description -->
                 <!-- Facebook -->
                     <a href="<?php echo $vdata[0]->facebook_link ?>"><i class="fab fa-facebook-f"></i></a>
-                    
+
                     <!-- Twitter -->
                     <a href="<?php echo $vdata[0]->twitter_link ?>">
                         <i class="fab fa-twitter"></i>
-                    </a> 
+                    </a>
                     <!-- Google -->
                     <a href="<?php echo $vdata[0]->google_link ?>">
                         <i class="fab fa-google"></i>
@@ -270,27 +259,27 @@ if ($vdata == null) {
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <!-- Linkedin -->
-                    
+
                     <a href="whatsapp://send?text=https://vendordiary.com/Vendor_details?vid=<?php echo $vdata[0]->id;?>" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a>
-                    
+
                     <div id="fb-root"></div>
                     <?$this->load->helper('url');
-            
+
             $currentURL = current_url();?>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0" nonce="CSwoyfBU"></script>
 <div class="fb-share-button" data-href="https://vendordiary.com/Vendor_details?vid=<?php echo $vdata[0]->id;?>" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=$currentURL."?vid=".$vdata[0]->id?>" class="fb-xfbml-parse-ignore">Share</a></div>
-                
+
               </div>
             </div>
-            
+
             <?php }?>
-            
-            
+
+
              <!--Google Ads-->
             <?php if($vdata[0]->plan_status!="Paid")
             {
             ?>
-           
+
                  <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-8898782763527089"
@@ -300,7 +289,7 @@ if ($vdata == null) {
                      <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-               
+
             <?php }?>
             <!--Vendor Time-->
             <div class="card border card-shadow-none">
@@ -319,7 +308,7 @@ if ($vdata == null) {
                       <?php echo $vdata[0]->tuesday_from_time ?> to <?php echo $vdata[0]->tuesday_to_time ?>
                     </div>
                   </div>
-                </div>   
+                </div>
                 <div class="row">
                   <div class="col-6 nopadding">
                     <h3>Wednesday</h3>
@@ -333,7 +322,7 @@ if ($vdata == null) {
                       <?php echo $vdata[0]->thursday_from_time ?> to <?php echo $vdata[0]->thursday_from_time ?>
                     </div>
                   </div>
-                </div> 
+                </div>
                 <div class="row">
                   <div class="col-6 nopadding">
                     <h3>Friday</h3>
@@ -355,11 +344,11 @@ if ($vdata == null) {
                       <?php echo $vdata[0]->sunday_from_time ?> to <?php echo $vdata[0]->sunday_from_time ?>
                     </div>
                   </div>
-                 
+
                 </div>
               </div>
             </div>
-            
+
              <!--Vendor Review-->
             <div class="card border card-shadow-none">
               <h3 class="card-header bg-white">Vendor Review </h3>
@@ -394,13 +383,13 @@ if ($vdata == null) {
                         <br>
                         <span><?php echo $rdata->r_message;?></span>
                         <br>
-                <?php    
+                <?php
                 }
                 ?>
               </div>
             </div>
              <!--Vendor Random-->
-             
+
               <?php if($vdata[0]->plan_status!="Paid")
             {
             ?>
@@ -409,8 +398,8 @@ if ($vdata == null) {
               <div  class="card-body">
                   <iframe src="https://vendordiary.com/GetVendor/vendorrandom?category_id=<?=$vdata[0]->category_id?>&country_id=<?=$vdata[0]->country_id?>&state_id=<?=$vdata[0]->state_id?>&city_id=<?=$vdata[0]->city_id?>" allowfullscreen style=" left:0; top:0; width:100%; "  height="350px" frameBorder="0">
                     </iframe>
-                    
-                   
+
+
 <!-- Home page -->
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -421,12 +410,12 @@ if ($vdata == null) {
                      <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-               
+
               </div>
             </div>
             <?}?>
-            
-             <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>               
+
+             <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
  <amp-ad width="100vw" height="320"
      type="adsense"
      data-ad-client="ca-pub-8898782763527089"
@@ -434,7 +423,7 @@ if ($vdata == null) {
      data-auto-format="mcrspv"
      data-full-width="">
   <div overflow=""></div>
-</amp-ad>   
+</amp-ad>
           </div>
           <!-- /.review-content -->
         </div>
@@ -476,7 +465,7 @@ if ($vdata == null) {
                         <small>Format: 9XXXXXXXX9</small>
                       </div>
                     </div>
-                   
+
                     <!-- Textarea -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                       <div class="form-group">
@@ -650,6 +639,7 @@ if ($vdata == null) {
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
               <input id="page_source" name="page_source" type="hidden" value="vender-listing" />
               <input id="vendor_claim_id" name="vendor_claim_id" type="hidden" value="" />
+
               <!-- Text input-->
               <div class="form-group">
                 <label class="control-label sr-only" for="full_name">
@@ -778,24 +768,9 @@ if ($vdata == null) {
 // 		$(this).addClass("fadeIn");
 // 	});
 // </script>
-  
-     
+
+
 
 <?php
 }
-
-
 ?>
-
-  <!--<ins class="adsbygoogle"-->
-  <!--                   style="display:block"-->
-  <!--                   data-ad-client="ca-pub-8898782763527089"-->
-  <!--                   data-ad-slot="5983426633"-->
-  <!--                   data-ad-format="auto"-->
-  <!--                   data-full-width-responsive="true"></ins>-->
-  <!--                   <script>-->
-  <!--                   (adsbygoogle = window.adsbygoogle || []).push({});-->
-  <!--              </script>-->
-
-           
-                
