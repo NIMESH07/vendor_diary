@@ -44,7 +44,7 @@ class Registration extends CI_Controller {
 // 		$this->form_validation->set_rules('long', 'Map Address', 'required');
 		if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('registration/mainregistration',$data);
+            $this->load->view('registration/registration',$data);
         }
         else
         {

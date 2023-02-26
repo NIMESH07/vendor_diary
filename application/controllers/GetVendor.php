@@ -380,12 +380,9 @@ class GetVendor extends CI_Controller
 // 		Get country
 		$query = $this->db->query('SELECT * FROM `country_master` where status="APPROVED" and is_deleted="No"');
         $data['country']=$query->result();
-//		$this->load->view('page/header', $data);
-//		$this->load->view('vendor_result', $data);
-//		$this->load->view('page/footer', $data);
-		$this->load->view('page/mainheader', $data);
-		$this->load->view('main_vendor_result', $data);
-		$this->load->view('page/mainfooter', $data);
+		$this->load->view('page/header', $data);
+		$this->load->view('vendor_result', $data);
+		$this->load->view('page/footer', $data);
 		if($ciid != 0 && $caid != 0 )
 		{
 		    if(isset($this->session->idtoken))

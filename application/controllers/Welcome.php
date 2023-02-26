@@ -27,13 +27,9 @@ class Welcome extends CI_Controller {
         
 		$data['country']=$query->result();
 		$data['site']=$this->OH->getsitedata();
-		/*$this->load->view('page/header',$data);
+		$this->load->view('page/header',$data);
 		$this->load->view('Vendor_home',$data);
-		$this->load->view('page/footer',$data);*/
-
-			$this->load->view('page/mainheader',$data);
-			$this->load->view('page/mainhome',$data);
-			$this->load->view('page/mainfooter',$data);
+		$this->load->view('page/footer',$data);
 
 	}
 	

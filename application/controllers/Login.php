@@ -19,7 +19,7 @@ class Login extends CI_Controller
 	public function index()
 	{
 		$data['site']=$this->OH->getsitedata();
-		$this->load->view('Login/main_vendor_login',$data);
+		$this->load->view('Login/vendor_login',$data);
 	}
 
 	public function sendOTPOnMobile(){

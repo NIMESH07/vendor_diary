@@ -22,33 +22,33 @@ class Contactus extends CI_Controller
     public function index()
     {
 		$data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('contact_us',$data);
-        $this->load->view('page/mainfooter', $data);
+        $this->load->view('page/footer', $data);
         
     }
     
     public function privacyPolicy()
     {
           $data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('PrivacyPolicy');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
     public function TermsofService()
     {
           $data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('termsofservice');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
     
     public function aboutus()
     {
         $data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('aboutus');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
     
     public function faq()
@@ -60,9 +60,9 @@ class Contactus extends CI_Controller
 		$query = $this->db->get();
 		$data['allfaq'] = $query->result();
 		$data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('faq');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
     public function contact()
     {
@@ -76,9 +76,9 @@ class Contactus extends CI_Controller
     public function privacyPolicy2()
     {
           $data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('PrivacyPolicy');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
     
     public function aboutus2()
@@ -98,8 +98,8 @@ class Contactus extends CI_Controller
 		$query = $this->db->get();
 		$data['allfaq'] = $query->result();
 		$data['site']=$this->OH->getsitedata();
-        $this->load->view('page/mainheader', $data);
+        $this->load->view('page/header', $data);
         $this->load->view('faq');
-        $this->load->view('page/mainfooter');
+        $this->load->view('page/footer');
     }
 }

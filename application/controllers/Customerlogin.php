@@ -16,8 +16,7 @@ class Customerlogin extends CI_Controller
 	{
 	   // die($this->session->googlelogin);
 		$data['site']=$this->OH->getsitedata();
-//		$this->load->view('Login/Customer_login',$data);
-		$this->load->view('Login/main_customer_login',$data);
+		$this->load->view('Login/Customer_login',$data);
 	}
 	
 	public function googlelogin()
